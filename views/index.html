@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My User APp</title>
+    </head>
+
+    <body>
+        <h3>My User App</h3>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Firstname</th>
+                    <th>Lastname</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% @users.each do |user| %>
+                <% user = user.to_json  %>
+                <% user = JSON.parse(user) %>
+                    <tr>
+                        <td><%= user['firstname'] %></td>
+                        <td><%= user['lastname'] %></td>
+                        <td><%= user['Age'] %></td>
+                        <td><%= user['email'] %></td>
+                    </tr>
+                <% end %>
+            </tbody>
+        </table>
+    </body>
+
+</html>
