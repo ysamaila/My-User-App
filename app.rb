@@ -63,6 +63,7 @@ delete '/sign_out' do
     status 204
 end
 
+
 delete '/users' do
     user_id = session[:user_id]
     if user_id
